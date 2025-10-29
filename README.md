@@ -198,6 +198,7 @@
       font-weight: 700;
     }
    <style>
+<style>
   :root {
     --pink: #f5c6d0;
     --black: #2d2926;
@@ -301,6 +302,9 @@
     .notify-btn { width:100%; justify-content:center; }
     form input { width:100% !important; }
   }
+     
+</style>
+
      
 </style>
 
