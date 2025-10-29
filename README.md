@@ -622,3 +622,6 @@
   </script>
 </body>
 </html>
+a[href="/"], a[href="#"], a[href="index.html"] {
+  display: none !important;
+}
