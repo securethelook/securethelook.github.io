@@ -197,6 +197,52 @@
       cursor: pointer;
       font-weight: 700;
     }
+    /* --- Mobile Optimization --- */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .hero img {
+    height: 260px;
+  }
+  .hero-overlay h1 {
+    font-size: 2.2rem;
+  }
+  .coming-soon {
+    font-size: 1.4rem;
+    margin: 60px 0;
+  }
+  .notify-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .checkout-btn {
+    width: 90%;
+    margin: 20px auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero img {
+    height: 220px;
+  }
+  .hero-overlay h1 {
+    font-size: 1.8rem;
+  }
+  .hero-overlay p {
+    font-size: 1rem;
+  }
+  nav a, .pill {
+    font-size: 0.9rem;
+  }
+}
+
   </style>
 </head>
 <body>
