@@ -478,6 +478,10 @@
       width: 90%;
     }
   }
+a[href*="securethelook.github.io"],
+a[href="/"] {
+  display: none !important;
+}
 
   </style>
 </head>
@@ -497,7 +501,6 @@
     <section class="hero">
       <img src="https://images.unsplash.com/photo-1603252109303-2751441dd157?q=80&w=1600&auto=format&fit=crop" alt="Voulté Fashion">
       <div class="hero-overlay">
-        
         <p>Secure the Look</p>
       </div>
     </section>
