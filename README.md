@@ -493,6 +493,27 @@ nav a {
   visibility: visible !important;
   opacity: 1 !important;
 }
+  /* Kill the GitHub Pages auto title/banner */
+body > h1,
+body > div > h1,
+body > header h1,
+header[role="banner"],
+header[role="banner"] *,
+div[role="banner"],
+div[role="banner"] *,
+#header,
+#header *,
+.site-header,
+.site-header *,
+.page-header,
+.page-header * {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
   
   </style>
 </head>
