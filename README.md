@@ -273,15 +273,14 @@
   }
 
   /* Hero */
-/* Hero */
 .hero {
   position: relative;
   width: 100%;
-  height: 80vh; /* desktop height */
-  max-height: 700px;
-  overflow: hidden;
+  height: 84vh; /* desktop height */
   margin: 28px 0;
-  border: 6px solid rgba(255, 255, 255, 0.6);
+  border: none;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
 }
 
 .hero img {
