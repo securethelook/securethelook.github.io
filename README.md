@@ -289,3 +289,6 @@
   </script>
 </body>
 </html>
+h1, header h1, .site-title {
+  display: none !important;
+}
