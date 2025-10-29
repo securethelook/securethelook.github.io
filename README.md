@@ -303,11 +303,6 @@
     form input { width:100% !important; }
   }
      
-</style>
-
-     
-</style>
-
   </style>
 </head>
 <body>
