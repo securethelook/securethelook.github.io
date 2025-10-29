@@ -307,19 +307,22 @@
     text-align: center;
   }
 
-  .hero-overlay h1 {
-    font-size: 3rem;
-    margin: 0;
-    color: var(--pink);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-  }
+ .hero-overlay h1 {
+  font-size: 3rem;
+  margin: 0;
+  color: var(--pink); /* your Voulté pink */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
 
-  .hero-overlay p {
-    margin-top: 10px;
-    font-size: 1.2rem;
-    opacity: 0.8;
-  }
+.hero-overlay p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  opacity: 0.9;
+  color: #fff;
+}
+
 
   /* Notify */
   .coming-soon {
