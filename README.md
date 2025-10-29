@@ -478,16 +478,20 @@
       width: 90%;
     }
   }
-/* Hide the blue GitHub Pages title link everywhere */
-a[href*="securethelook.github.io"],
-a[href="/"],
-a[href*="voulte"],
-header a:first-of-type,
-body > a:first-of-type {
+/* Hide the GitHub Pages title link that appears above the site */
+body > h1:first-child,
+body > h1:first-child a {
   display: none !important;
   visibility: hidden !important;
   height: 0 !important;
   overflow: hidden !important;
+}
+
+/* Keep the About button and other nav links visible */
+nav a {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
   
   </style>
@@ -581,12 +585,3 @@ body > a:first-of-type {
   </script>
 </body>
 </html>
-body > h1:first-of-type,
-body > h1:first-of-type a,
-body > a[href*="github.io"],
-a[href="https://securethelook.github.io/"] {
-  display: none !important;
-  visibility: hidden !important;
-  height: 0 !important;
-  overflow: hidden !important;
-}
