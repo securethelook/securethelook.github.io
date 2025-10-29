@@ -273,19 +273,29 @@
   }
 
   /* Hero */
-  .hero {
-    margin: 28px 0;
-    position: relative;
-    border: 6px solid rgba(255,255,255,0.06);
-    overflow: hidden;
-  }
+/* Hero */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 80vh; /* desktop height */
+  max-height: 700px;
+  overflow: hidden;
+  margin: 28px 0;
+  border: 6px solid rgba(255, 255, 255, 0.6);
+}
 
-  .hero img {
-    display: block;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    filter: brightness(0.8);
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.8);
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 50vh; /* smaller height for phones */
+    border: none; /* optional: cleaner look on small screens */
   }
 
   .hero-overlay {
