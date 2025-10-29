@@ -451,58 +451,38 @@ footer {
 }
 
 /* ✅ MOBILE FIXES */
-@media (max-width: 600px) {
-  body {
-    overflow-x: hidden;
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden; /* stop side scrolling */
+    width: 100%;
   }
 
-  header {
-    flex-direction: column;
-    text-align: center;
-    padding: 10px;
+  .container {
+    padding: 12px;
+    max-width: 100%;
   }
 
-  nav a {
-    margin: 5px;
-    display: inline-block;
-    font-size: 0.9em;
+  header, nav, .hero, .coming-soon, footer {
+    max-width: 100%;
   }
 
   .hero img {
     width: 100%;
     height: auto;
-    object-fit: cover;
   }
 
-  h1 {
-    font-size: 1.4em;
-    margin: 15px 0;
+  .coming-soon {
+    font-size: 1.4rem;
+    margin: 40px 0;
   }
 
-  .notify {
+  .notify-btn, input[type="email"] {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .cart-overlay {
     width: 90%;
-    padding: 15px;
-    font-size: 0.9em;
-    margin: 0 auto;
-  }
-
-  .notify input[type="email"] {
-    width: 90%;
-    margin: 10px auto;
-  }
-
-  .notify button {
-    width: 90%;
-    margin: 5px auto;
-  }
-
-  .help-popup {
-    width: 90%;
-    right: 5%;
-  }
-
-  footer {
-    font-size: 0.8em;
   }
 }
 
