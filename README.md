@@ -301,8 +301,42 @@
     .coming-soon { font-size:1.3rem; }
     .notify-btn { width:100%; justify-content:center; }
     form input { width:100% !important; }
+  /* Mobile fixes */
+@media (max-width: 768px) {
+  .container {
+    padding: 12px;
   }
-     
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .hero img {
+    height: 220px;
+    object-fit: cover;
+  }
+
+  .cart-overlay {
+    width: 90%;
+  }
+
+  .coming-soon,
+  .notify-btn,
+  input[type="email"],
+  .checkout-btn {
+    font-size: 0.9rem;
+  }
+
+  .hero-overlay h1 {
+    font-size: 2rem;
+  }
+    
   </style>
 </head>
 <body>
