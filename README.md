@@ -514,6 +514,23 @@ div[role="banner"] *,
   margin: 0 !important;
   padding: 0 !important;
 }
+  /* Force hide GitHub Pages auto heading (blue Voulté bar) */
+body > h1:first-of-type,
+body > div:first-of-type > h1,
+body > header:first-of-type,
+header[role="banner"],
+div[role="banner"],
+div[style*="background-color"],
+h1[style*="color"],
+[style*="color: rgb(3, 102, 214)"],
+[style*="color:#0366d6"] {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
   
   </style>
 </head>
