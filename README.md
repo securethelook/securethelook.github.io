@@ -566,6 +566,55 @@
     const helpBtn = document.getElementById('help-btn');
     const chatPopup = document.getElementById('chat-popup');
     helpBtn.onclick = () => chatPopup.classList.toggle('open');
+    <script>
+  // Safely remove the GitHub Pages auto-title banner without touching your nav
+  document.addEventListener('DOMContentLoaded', () => {
+    // Helper: returns true if node contains the repo/title text
+    function looksLikeRepoTitle(node) {
+      try {
+        const txt = (node.innerText || '').trim().toLowerCase();
+        if (!txt) return false;
+        // change 'voulte' if your repo title is spelled differently
+        return txt === 'voulte' || txt.includes('voulte') || txt.includes('securethelook');
+      } catch (e) { return false; }
+    }
+
+    // Search a few safe candidate locations near body top
+    const candidates = [
+      document.querySelector('body > h1'),
+      document.querySelector('body > div:first-child'),
+      document.querySelector('body > a:first-child'),
+      document.querySelector('header[role="banner"]'),
+      document.querySelector('#header'),
+      document.querySelector('.page-header'),
+      document.querySelector('.site-header')
+    ];
+
+    for (const node of candidates) {
+      if (!node) continue;
+      // If the node itself looks like the repo banner, remove it
+      if (looksLikeRepoTitle(node)) {
+        node.remove();
+        break;
+      }
+      // Or check children for a link that points to your github pages URL
+      const link = node.querySelector ? node.querySelector('a[href*="securethelook.github.io"], a[href*="github.io"]') : null;
+      if (link && looksLikeRepoTitle(link)) {
+        // remove the parent block that contains that link (so nav isn't removed)
+        node.remove();
+        break;
+      }
+    }
+
+    // Extra: if something still shows, remove any top-most anchor whose text is just the repo name
+    const topAnchors = document.querySelectorAll('body > a, body > h1 > a');
+    topAnchors.forEach(a => {
+      const t = (a.innerText || '').trim().toLowerCase();
+      if (t === 'voulte' || t === 'securethelook' || t === 'securethelook.github.io') {
+        a.closest('h1')?.remove() || a.remove();
+      }
+    });
+  });
   </script>
 </body>
 </html>
