@@ -451,55 +451,61 @@ footer {
 }
 
 /* ✅ MOBILE FIXES */
-@media (max-width: 768px) {
-  .container {
-    padding: 12px;
+@media (max-width: 600px) {
+  body {
+    overflow-x: hidden;
   }
 
   header {
     flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
+    text-align: center;
+    padding: 10px;
   }
 
-  nav {
-    width: 100%;
-    justify-content: space-between;
+  nav a {
+    margin: 5px;
+    display: inline-block;
+    font-size: 0.9em;
   }
 
   .hero img {
-    height: 200px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
   }
 
-  .hero-overlay h1 {
-    font-size: 2rem;
+  h1 {
+    font-size: 1.4em;
+    margin: 15px 0;
   }
 
-  .cart-overlay {
+  .notify {
     width: 90%;
+    padding: 15px;
+    font-size: 0.9em;
+    margin: 0 auto;
   }
 
-  .checkout-btn {
+  .notify input[type="email"] {
     width: 90%;
+    margin: 10px auto;
   }
 
-  #notify-form {
-    padding: 20px;
+  .notify button {
     width: 90%;
+    margin: 5px auto;
   }
 
-  #notify-form input {
+  .help-popup {
     width: 90%;
+    right: 5%;
   }
 
-  .coming-soon {
-    font-size: 1.3rem;
+  footer {
+    font-size: 0.8em;
   }
+}
 
-  .notify-btn {
-    width: 80%;
-  }
- 
   </style>
 </head>
 <body>
