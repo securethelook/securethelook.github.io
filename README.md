@@ -301,6 +301,7 @@
     .notify-btn { width:100%; justify-content:center; }
     form input { width:100% !important; }
   }
+     
 </style>
 
   </style>
