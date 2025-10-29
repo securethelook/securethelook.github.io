@@ -497,7 +497,7 @@
     <section class="hero">
       <img src="https://images.unsplash.com/photo-1603252109303-2751441dd157?q=80&w=1600&auto=format&fit=crop" alt="Voulté Fashion">
       <div class="hero-overlay">
-        <h1>Voulté</h1>
+        
         <p>Secure the Look</p>
       </div>
     </section>
