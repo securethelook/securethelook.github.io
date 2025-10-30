@@ -221,10 +221,10 @@
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script>
     // === Replace these with your EmailJS keys ===
-    const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
-    const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
-    const EMAILJS_NOTIFY_TEMPLATE = "YOUR_NOTIFY_TEMPLATE_ID";
-    const EMAILJS_HELP_TEMPLATE = "YOUR_HELP_TEMPLATE_ID";
+    const EMAILJS_PUBLIC_KEY = hjyiYtDOfwKm9I9Vc;
+    const EMAILJS_SERVICE_ID = Voulté services;
+    const EMAILJS_NOTIFY_TEMPLATE = template_o0ykt64;
+    const EMAILJS_HELP_TEMPLATE = template_tejwuwl;
     // ============================================
 
     // Init EmailJS
