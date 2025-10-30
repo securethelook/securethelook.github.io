@@ -203,72 +203,24 @@
 <style>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
-  // Initialize EmailJS
-  emailjs.init("YOUR_PUBLIC_KEY"); // 👈 replace this with your real public key
+ <script>
+  const cartBtn = ...
+</script>
 
-  // --- CART OPEN/CLOSE ---
-  const cartBtn = document.getElementById('cart-btn');
-  const cartOverlay = document.getElementById('cart-overlay');
-  const closeCart = document.getElementById('close-cart');
-  if (cartBtn && closeCart) {
-    cartBtn.addEventListener('click', () => cartOverlay.classList.add('open'));
-    closeCart.addEventListener('click', () => cartOverlay.classList.remove('open'));
-  }
+<script>
+  // Safely remove the GitHub Pages auto-title banner ...
+</script>
 
-  // --- ABOUT POPUP ---
-  const aboutBtn = document.querySelector('nav a[href="#about"]');
-  const aboutModal = document.getElementById('about-modal');
-  const closeAbout = document.getElementById('close-about');
-  if (aboutBtn && aboutModal && closeAbout) {
-    aboutBtn.addEventListener('click', () => aboutModal.classList.add('open'));
-    closeAbout.addEventListener('click', () => aboutModal.classList.remove('open'));
-  }
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
 
-  // --- HELP POPUP ---
-  const helpBtn = document.getElementById('help-btn');
-  const helpModal = document.getElementById('help-modal');
-  const closeHelp = document.getElementById('close-help');
-  if (helpBtn && helpModal && closeHelp) {
-    helpBtn.addEventListener('click', () => helpModal.classList.add('open'));
-    closeHelp.addEventListener('click', () => helpModal.classList.remove('open'));
-  }
+<script type="text/javascript">
+  (function() {
+    emailjs.init(hjyiYtDOfwKm9I9Vc);
+  })();
+  ...
 
-  // --- NOTIFY FORM ---
-  const notifyForm = document.getElementById('notify-form');
-  if (notifyForm) {
-    notifyForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const email = document.getElementById('email').value;
-      if (!email) return alert('Please enter your email.');
-
-      emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
-        email: email
-      }).then(() => {
-        alert('Thank you! You’ll be notified soon.');
-        notifyForm.reset();
-      }).catch(() => alert('Something went wrong. Please try again.'));
-    });
-  }
-
-  // --- HELP FORM ---
-  const helpForm = document.getElementById('help-form');
-  if (helpForm) {
-    helpForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = document.getElementById('help-name').value;
-      const email = document.getElementById('help-email').value;
-      const message = document.getElementById('help-message').value;
-
-      emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
-        from_name: name,
-        reply_to: email,
-        message: message
-      }).then(() => {
-        alert('Your message was sent! We’ll get back to you soon.');
-        helpForm.reset();
-      }).catch(() => alert('Something went wrong. Please try again.'));
-    });
-  }
 </script>
 
   </style>
