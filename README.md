@@ -620,6 +620,60 @@
     });
   });
   </script>
+  <!-- EmailJS SDK -->
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+
+<script type="text/javascript">
+  (function() {
+    emailjs.init("YOUR_PUBLIC_KEY"); // <-- replace with your public key
+  })();
+
+  // Notify form
+  function sendNotify(e) {
+    e.preventDefault();
+    const email = document.getElementById("notifyEmail").value;
+    if (!email) {
+      alert("Please enter your email.");
+      return;
+    }
+    emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+      from_email: email,
+      from_name: "Notify Signup",
+      message: "New notify request from " + email
+    }).then(function() {
+      alert("Thank you! We’ll notify you soon.");
+      document.getElementById("notifyEmail").value = "";
+    }, function(error) {
+      alert("Error: " + JSON.stringify(error));
+    });
+  }
+
+  // Help form
+  function sendHelp(e) {
+    e.preventDefault();
+    const name = document.getElementById("helpName").value;
+    const email = document.getElementById("helpEmail").value;
+    const message = document.getElementById("helpMessage").value;
+    if (!name || !email || !message) {
+      alert("Please fill in all fields.");
+      return;
+    }
+    emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+      from_name: name,
+      from_email: email,
+      message: message
+    }).then(function() {
+      alert("Your message has been sent — our team will get back to you!");
+      document.getElementById("helpName").value = "";
+      document.getElementById("helpEmail").value = "";
+      document.getElementById("helpMessage").value = "";
+    }, function(error) {
+      alert("Error: " + JSON.stringify(error));
+    });
+  }
+</script>
 </body>
 </html>
 a[href="/"], a[href="#"], a[href="index.html"] {
