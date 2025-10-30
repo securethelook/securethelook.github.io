@@ -201,288 +201,76 @@
    </style>
    
 <style>
-  :root {
-    --pink: #f5c6d0;
-    --black: #2d2926;
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  // Initialize EmailJS
+  emailjs.init("YOUR_PUBLIC_KEY"); // 👈 replace this with your real public key
+
+  // --- CART OPEN/CLOSE ---
+  const cartBtn = document.getElementById('cart-btn');
+  const cartOverlay = document.getElementById('cart-overlay');
+  const closeCart = document.getElementById('close-cart');
+  if (cartBtn && closeCart) {
+    cartBtn.addEventListener('click', () => cartOverlay.classList.add('open'));
+    closeCart.addEventListener('click', () => cartOverlay.classList.remove('open'));
   }
 
-  * {
-    box-sizing: border-box;
+  // --- ABOUT POPUP ---
+  const aboutBtn = document.querySelector('nav a[href="#about"]');
+  const aboutModal = document.getElementById('about-modal');
+  const closeAbout = document.getElementById('close-about');
+  if (aboutBtn && aboutModal && closeAbout) {
+    aboutBtn.addEventListener('click', () => aboutModal.classList.add('open'));
+    closeAbout.addEventListener('click', () => aboutModal.classList.remove('open'));
   }
 
-  html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* Stop horizontal scroll */
-    width: 100%;
-    font-family: Inter, Segoe UI, Roboto, Arial, sans-serif;
-    background: var(--black);
-    color: #fff;
+  // --- HELP POPUP ---
+  const helpBtn = document.getElementById('help-btn');
+  const helpModal = document.getElementById('help-modal');
+  const closeHelp = document.getElementById('close-help');
+  if (helpBtn && helpModal && closeHelp) {
+    helpBtn.addEventListener('click', () => helpModal.classList.add('open'));
+    closeHelp.addEventListener('click', () => helpModal.classList.remove('open'));
   }
 
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 24px;
+  // --- NOTIFY FORM ---
+  const notifyForm = document.getElementById('notify-form');
+  if (notifyForm) {
+    notifyForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      if (!email) return alert('Please enter your email.');
+
+      emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+        email: email
+      }).then(() => {
+        alert('Thank you! You’ll be notified soon.');
+        notifyForm.reset();
+      }).catch(() => alert('Something went wrong. Please try again.'));
+    });
   }
 
-  header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 0;
-    border-bottom: 3px solid rgba(255,255,255,0.1);
+  // --- HELP FORM ---
+  const helpForm = document.getElementById('help-form');
+  if (helpForm) {
+    helpForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('help-name').value;
+      const email = document.getElementById('help-email').value;
+      const message = document.getElementById('help-message').value;
+
+      emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+        from_name: name,
+        reply_to: email,
+        message: message
+      }).then(() => {
+        alert('Your message was sent! We’ll get back to you soon.');
+        helpForm.reset();
+      }).catch(() => alert('Something went wrong. Please try again.'));
+    });
   }
+</script>
 
-  .logo-text {
-    font-size: 2rem;
-    font-weight: 800;
-    color: var(--pink);
-  }
-
-  .slogan {
-    font-size: 0.9rem;
-    opacity: 0.7;
-    margin-top: -4px;
-  }
-
-  nav {
-    display: flex;
-    gap: 18px;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-
-  nav a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-  }
-
-  .pill {
-    display: inline-block;
-    background: rgba(255,255,255,0.08);
-    padding: 6px 10px;
-    border-radius: 999px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
-
-  .pill:hover {
-    background: var(--pink);
-    color: var(--black);
-  }
-
-  /* Hero */
-.hero {
-  position: relative;
-  width: 100%;
-  height: 84vh; /* desktop height */
-  margin: 28px 0;
-  border: none;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
-  overflow: hidden;
-}
-
-.hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.8);
-  display: block;
-}
-
-@media (max-width: 768px) {
-  .hero {
-    height: 50vh; /* smaller height for phones */
-    border: none; /* optional: cleaner look on small screens */
-  }
-
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
-
- .hero-overlay h1 {
-  font-size: 3rem;
-  margin: 0;
-  color: var(--pink); /* your Voulté pink */
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-}
-
-.hero-overlay p {
-  margin-top: 1rem;
-  font-size: 1.2rem;
-  opacity: 0.9;
-  color: #fff;
-}
-
-
-  /* Notify */
-  .coming-soon {
-    text-align: center;
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin: 80px 0 30px;
-    color: var(--pink);
-  }
-
-  form {
-    display: inline-block;
-    text-align: center;
-    width: 100%;
-  }
-
-  input[type="email"] {
-    padding: 10px 12px;
-    border-radius: 6px;
-    border: 1px solid rgba(255,255,255,0.08);
-    background: transparent;
-    color: #fff;
-    width: 260px;
-    max-width: 90%;
-    text-align: center;
-  }
-
-  .notify-btn {
-    background: var(--pink);
-    color: var(--black);
-    border: none;
-    border-radius: 999px;
-    padding: 12px 24px;
-    font-size: 1rem;
-    font-weight: 600;
-    margin-top: 10px;
-    cursor: pointer;
-    transition: all 0.25s ease;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-  }
-
-  .notify-btn:hover {
-    background: #fff;
-    color: var(--black);
-    transform: translateY(-2px);
-  }
-
-  /* Cart Drawer */
-  .cart-overlay {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 380px;
-    height: 100%;
-    background: var(--black);
-    color: #fff;
-    box-shadow: -2px 0 10px rgba(0,0,0,0.6);
-    transform: translateX(100%);
-    transition: transform 0.4s ease;
-    z-index: 9999;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .cart-overlay.open {
-    transform: translateX(0);
-  }
-
-  .cart-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--pink);
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-  }
-
-  .cart-content {
-    flex: 1;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0.8;
-  }
-
-  .checkout-btn {
-    background: var(--pink);
-    color: var(--black);
-    border: none;
-    border-radius: 999px;
-    padding: 14px 24px;
-    font-size: 1rem;
-    font-weight: 700;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(245,198,208,0.5);
-    transition: all 0.25s ease;
-    width: 300px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin: 0 auto 30px auto;
-    display: block;
-  }
-
-  footer {
-    margin-top: 48px;
-    padding: 40px 0;
-    text-align: center;
-    border-top: 3px solid rgba(255,255,255,0.06);
-  }
-
-  .socials {
-    display: flex;
-    gap: 24px;
-    justify-content: center;
-    margin-top: 10px;
-    flex-wrap: wrap;
-  }
-
-  .socials img {
-    width: 28px;
-    height: 28px;
-    filter: invert(1);
-    opacity: 0.9;
-    transition: opacity 0.2s ease;
-  }
-
-  .socials img:hover {
-    opacity: 1;
-  }
-
-  /* Mobile Fix */
-  @media (max-width: 768px) {
-    .container {
-      padding: 12px;
-      width: 100%;
-      max-width: 100%;
-    }
-
-    .hero-overlay h1 {
-      font-size: 2rem;
-    }
-
-    .hero-overlay p {
-      font-size: 1rem;
-    }
-
-    .cart-overlay {
-      width: 90%;
-    }
-
-    .checkout-btn {
-      width: 90%;
-    }
-   
   </style>
 </head>
 <body>
