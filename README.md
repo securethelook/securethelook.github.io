@@ -203,17 +203,12 @@
 <style>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
- <script>
   const cartBtn = ...
-</script>
-
-<script>
   // Safely remove the GitHub Pages auto-title banner ...
-</script>
 
 <script type="text/javascript"
   src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
-</script>
+
 
 <script type="text/javascript">
   (function() {
