@@ -197,7 +197,9 @@
       cursor: pointer;
       font-weight: 700;
     }
-   <style>
+
+   </style>
+   
 <style>
   :root {
     --pink: #f5c6d0;
@@ -627,7 +629,7 @@
 
 <script type="text/javascript">
   (function() {
-    emailjs.init("YOUR_PUBLIC_KEY"); // <-- replace with your public key
+    emailjs.init(hjyiYtDOfwKm9I9Vc); // <-- replace with your public key
   })();
 
   // Notify form
@@ -638,7 +640,7 @@
       alert("Please enter your email.");
       return;
     }
-    emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+    emailjs.send(Voulté services, template_bmpslih, {
       from_email: email,
       from_name: "Notify Signup",
       message: "New notify request from " + email
